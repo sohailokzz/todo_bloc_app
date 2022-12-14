@@ -5,6 +5,14 @@ class AddTodoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Add Todo"),
+        centerTitle: true,
+      ),
+      body: const Center(
+        child: Text('Add Todos'),
+      ),
+    );
   }
 }

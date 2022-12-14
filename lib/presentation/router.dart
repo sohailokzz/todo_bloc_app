@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_bloc_app/constants/strings.dart';
 import 'package:todo_bloc_app/presentation/screens/add_todo_screen.dart';
 import 'package:todo_bloc_app/presentation/screens/todo_edit_screen.dart';
 import 'package:todo_bloc_app/presentation/screens/todo_screen.dart';
@@ -10,11 +11,11 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const TodoScreen(),
         );
-      case '/edit_todo':
+      case editTodoRoute:
         return MaterialPageRoute(
           builder: (_) => const EditTodoScreen(),
         );
-      case '/add_todo':
+      case addTodoRoute:
         return MaterialPageRoute(
           builder: (_) => const AddTodoScreen(),
         );
