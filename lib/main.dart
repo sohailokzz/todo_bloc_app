@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-import 'presentation/screens/todo_screen.dart';
+import 'package:todo_bloc_app/presentation/router.dart';
 
 void main() {
-  runApp(const TodoApp());
+  runApp(
+    TodoApp(
+      router: AppRouter(),
+    ),
+  );
 }
 
 class TodoApp extends StatelessWidget {
-  const TodoApp({super.key});
+  final AppRouter router;
+  const TodoApp({
+    super.key,
+    required this.router,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +23,7 @@ class TodoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TodoScreen(),
+      onGenerateRoute: router.generateRoutes,
     );
   }
 }
