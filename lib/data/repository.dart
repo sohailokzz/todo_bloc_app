@@ -15,4 +15,13 @@ class Repository {
     final patchObj = {"isCompleted": isCompleted.toString()};
     return await networkService.patchTodo(patchObj, id!);
   }
+
+  Future<Todo?> addTodo(String message) async {
+    final todoObj = {"todo": message, "isCompleted": "false"};
+
+    final todoMap = await networkService.addTodo(todoObj);
+    if (todoMap == null) return null;
+
+    return Todo.fromJson(todoMap);
+  }
 }
